@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rate My Prompt</title>
+  <meta name="description" content="A playful protocol that lets an AI generate a Markdown prompting report card for any conversation." />
+  <meta property="og:title" content="Rate My Prompt" />
+  <meta property="og:description" content="Get a structured report card on your prompting style. No backend — just Markdown." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --fg-muted: #555;
+      --link: #0969da;
+      --code-bg: #f6f8fa;
+      --border: #d0d7de;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --fg: #e6edf3;
+        --fg-muted: #9198a1;
+        --link: #58a6ff;
+        --code-bg: #161b22;
+        --border: #30363d;
+      }
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.55;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .sub {
+      margin-top: 8px;
+      color: var(--fg-muted);
+    }
+
+    h2 {
+      margin-top: 28px;
+    }
+
+    h3 {
+      margin-top: 18px;
+    }
+
+    a {
+      color: var(--link);
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    pre,
+    code {
+      background: var(--code-bg);
+      border-radius: 6px;
+    }
+
+    pre {
+      padding: 12px;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 10px 0 14px;
+      border: 1px solid var(--border);
+    }
+
+    code {
+      padding: 2px 6px;
+    }
+
+    .hint {
+      color: var(--fg-muted);
+      font-size: 0.95em;
+      margin-top: -6px;
+    }
+
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--fg-muted);
+      font-size: 0.9em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Rate My Prompt</h1>
+  <p class="sub">A playful protocol that lets an AI generate a Markdown "prompting report card."</p>
+
+  <h2>Protocol</h2>
+  <p>Raw (curl-friendly):</p>
+  <pre><code><a href="https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md">https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md</a></code></pre>
+  <p class="hint">Tip: open it in your browser to preview the instructions.</p>
+
+  <h2>How to use</h2>
+  <ol>
+    <li>Get the protocol (choose one option below).</li>
+    <li>Give it to your agent along with the conversation excerpt you want reviewed.</li>
+    <li>The agent returns a Markdown report card.</li>
+  </ol>
+
+  <h3>Option A (recommended): Fetch protocol via CLI</h3>
+  <p>Run this locally to print the protocol, then paste it into your agent:</p>
+  <pre><code>curl -L https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md</code></pre>
+
+  <h3>Option B: Agent can fetch URLs (if browsing/tools are enabled)</h3>
+  <p>Paste this into your agent:</p>
+  <pre><code>Fetch and follow this protocol exactly:
+https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md
+
+Conversation excerpt:
+&lt;paste here&gt;</code></pre>
+
+  <h3>Option C: No browsing/tools available (copy/paste protocol)</h3>
+  <p>If the agent cannot fetch URLs, paste the protocol text directly:</p>
+  <pre><code>PROTOCOL (paste this entire block first):
+&lt;paste the contents of prompt-relationship-report-v1.md here&gt;
+
+Conversation excerpt:
+&lt;paste here&gt;</code></pre>
+
+  <div class="footer">
+    <em>No backend. Just Markdown.</em>
+    <a href="https://github.com/davidlrnt/rate-my-prompt">GitHub</a>
+  </div>
+</body>
+
+</html>
