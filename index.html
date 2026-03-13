@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rate My Prompt</title>
-  <meta name="description" content="A playful protocol that lets an AI generate a Markdown prompting report card for any conversation." />
+  <meta name="description" content="Drop a protocol into your AI conversation and get a Markdown report card on your prompting style." />
   <meta property="og:title" content="Rate My Prompt" />
-  <meta property="og:description" content="Get a structured report card on your prompting style. No backend — just Markdown." />
+  <meta property="og:description" content="Get a structured report card on your prompting style — right inside your existing conversation." />
   <meta property="og:type" content="website" />
   <style>
     :root {
@@ -105,7 +105,7 @@
 
 <body>
   <h1>Rate My Prompt</h1>
-  <p class="sub">A playful protocol that lets an AI generate a Markdown "prompting report card."</p>
+  <p class="sub">Drop this protocol into any AI conversation to get a Markdown "prompting report card."</p>
 
   <h2>Protocol</h2>
   <p>Raw (curl-friendly):</p>
@@ -114,33 +114,25 @@
 
   <h2>How to use</h2>
   <ol>
-    <li>Get the protocol (choose one option below).</li>
-    <li>Give it to your agent along with the conversation excerpt you want reviewed.</li>
-    <li>The agent returns a Markdown report card.</li>
+    <li>Have a conversation with your AI agent as usual.</li>
+    <li>When you want feedback, give it the protocol (choose one option below).</li>
+    <li>The agent reviews the current session and returns a Markdown report card.</li>
   </ol>
 
   <h3>Option A (recommended): Fetch protocol via CLI</h3>
-  <p>Run this locally to print the protocol, then paste it into your agent:</p>
+  <p>Run this to grab the protocol text, then paste it into your current session:</p>
   <pre><code>curl -L https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md</code></pre>
 
   <h3>Option B: Agent can fetch URLs (if browsing/tools are enabled)</h3>
-  <p>Paste this into your agent:</p>
+  <p>Paste this into your current session:</p>
   <pre><code>Fetch and follow this protocol exactly:
-https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md
-
-Conversation excerpt:
-&lt;paste here&gt;</code></pre>
+https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md</code></pre>
 
   <h3>Option C: No browsing/tools available (copy/paste protocol)</h3>
-  <p>If the agent cannot fetch URLs, paste the protocol text directly:</p>
-  <pre><code>PROTOCOL (paste this entire block first):
-&lt;paste the contents of prompt-relationship-report-v1.md here&gt;
-
-Conversation excerpt:
-&lt;paste here&gt;</code></pre>
+  <p>Copy the protocol text from the file above and paste it directly into your session.</p>
 
   <div class="footer">
-    <em>No backend. Just Markdown.</em>
+    <em>No backend. No pasting excerpts. Just Markdown.</em>
     <a href="https://github.com/davidlrnt/rate-my-prompt">GitHub</a>
   </div>
 </body>

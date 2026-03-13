@@ -1,12 +1,12 @@
 # Rate My Prompt
 
-A playful protocol that lets an AI generate a human-readable Markdown "prompting report card" for any conversation excerpt.
+A playful protocol that lets an AI generate a human-readable Markdown "prompting report card" — right inside your existing conversation.
 
-**No backend. Just Markdown.**
+**No backend. No pasting excerpts. Just Markdown.**
 
 ## What it does
 
-Given a conversation excerpt, the agent produces a report with:
+Drop the protocol into your current agent session and it reviews the conversation you've already been having. The agent produces a report with:
 
 - **TL;DR verdict**
 - **1–5 scorecard** (clarity, context, verification, etc.)
@@ -27,7 +27,7 @@ https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt
 
 ### Option A (recommended): Fetch protocol via CLI
 
-Run this locally to print the protocol, then paste it into your agent along with the conversation excerpt:
+Run this to grab the protocol text, then paste it into your current session:
 
 ```bash
 curl -L https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md
@@ -35,25 +35,22 @@ curl -L https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocol
 
 ### Option B: Agent can fetch URLs (if browsing/tools are enabled)
 
-Paste this into your agent:
+Paste this into your current session:
 
 ```text
 Fetch and follow this protocol exactly:
 https://raw.githubusercontent.com/davidlrnt/rate-my-prompt/main/protocols/prompt-relationship-report-v1.md
-
-Conversation excerpt:
-<paste here>
 ```
 
 ### Option C: No browsing/tools available (copy/paste protocol)
 
-If the agent cannot fetch URLs, paste the protocol text directly first, then your excerpt.
+If the agent cannot fetch URLs, copy the protocol text from the file above and paste it directly into your session.
 
 ## Tips for best results
 
-- **Include context**: Share the last 10–30 turns (or the specific segment you want reviewed).
-- **Add evidence**: If it's technical, include logs/outputs and what you expected to happen.
-- **Enable quoting**: The protocol asks for receipts (quotes)—include enough context for quoting.
+- **Have a real conversation first**: The protocol works best after 10–30 turns of actual back-and-forth. A one-message session won't give the agent much to review.
+- **Don't clean up first**: Messy, real conversations produce the most useful feedback. That's the point.
+- **Works with any agent**: ChatGPT, Claude, Gemini, Copilot, local models — anything that can follow a Markdown prompt.
 
 ## Example output
 
@@ -124,9 +121,6 @@ Current state:
 
 Constraints:
 <hardware/time/format/safety constraints>
-
-Conversation excerpt:
-<paste the relevant turns or summarize + quote>
 
 What I want from you:
 - Diagnose / critique

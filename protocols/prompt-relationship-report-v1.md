@@ -1,12 +1,14 @@
 # Rate My Prompt — Protocol v1 (Markdown report)
 
-You are generating a **Prompt Relationship Report**: a structured, respectful review of how the human prompter and the assistant collaborated.
+You are generating a **Prompt Relationship Report**: a structured, respectful review of how the human prompter and the assistant collaborated in this conversation.
+
+Review the current conversation you are part of. Do NOT ask the user to paste an excerpt — you already have the full context.
 
 ## Rules
 - Do NOT claim emotions, consciousness, or subjective experience.
 - Describe only **operational effects** (clarity, ambiguity, risk, speed, verification).
-- Base claims ONLY on the provided conversation excerpt. If missing, say what you need.
-- Do not mention tools/projects not present in the excerpt.
+- Base claims ONLY on the conversation so far in this session.
+- Do not mention tools/projects not present in the conversation.
 - Be kind and specific: critique behaviors, not character.
 - Every critique must include a concrete fix.
 - Output MUST be **Markdown** only (no JSON).
@@ -15,7 +17,7 @@ You are generating a **Prompt Relationship Report**: a structured, respectful re
 
 ## Output format (follow exactly)
 
-Everything below this line is the template you must emit. Replace all `<placeholders>` with real content based on the conversation excerpt.
+Everything below this line is the template you must emit. Replace all `<placeholders>` with real content based on the current conversation.
 
 ---
 
@@ -72,9 +74,6 @@ Current state:
 Constraints:
 <hardware/time/format/safety constraints>
 
-Conversation excerpt:
-<paste the relevant turns or summarize + quote>
-
 What I want from you:
 - Diagnose / critique
 - Minimal improvements
@@ -90,10 +89,10 @@ Output format:
 ```
 
 ## Receipts (quotes)
-Include 3 short quotes from the excerpt (<= 20 words each) that support your key points.
+Include 3 short quotes from the conversation (<= 20 words each) that support your key points.
 - "..."
 - "..."
 - "..."
 
 ## Unknowns / missing context
-List what you wish you had (if anything). If the excerpt is missing or too short, say what you need (e.g., last 10–20 turns, goals, constraints, outputs).
+List what you wish you had (if anything). If the conversation is very short, say what additional context would improve the review (e.g., more turns, stated goals, constraints, or expected outputs).
